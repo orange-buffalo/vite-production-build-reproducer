@@ -1,0 +1,63 @@
+$primary-color: #323e51;
+$primary-color-lighter-i: #284165;
+$primary-color-lighter-ii: #6e83a2;
+$primary-color-lighter-iii: #7d9dbe;
+
+$secondary-color: #395a6d;
+
+$accent-primary-color: #3fa7ad;
+$accent-contrast-color: #56e5ed;
+
+$primary-grey: #f5f9fc;
+$secondary-grey: #e6eaef;
+$secondary-grey-darker-i: #c7c7c7;
+
+$warning-color: #f97e00;
+$warning-color-bg: #fff2de;
+
+$success-color: #42a48d;
+$success-color-bg: #ddfcf5;
+
+$danger-color: #de425f;
+$danger-color-lighter-iii: #ffc1cd;
+$danger-color-bg: #ffdfdf;
+
+$white: #fff;
+
+$components-color: #1faef3;
+$components-border-color: #dcdfe6;
+$components-border-radius: 2px;
+
+$primary-text-color: $primary-color-lighter-i;
+$secondary-text-color: $primary-color-lighter-ii;
+
+$xs-screen: 768px;
+$sm-screen: 992px;
+$md-screen: 1024px;
+$lg-screen: 1200px;
+$xl-screen: 1920px;
+
+// todo
+$sa-input-height: 40px;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $components-color,
+    ),
+  )
+
+  // todo
+  //$--color-primary: $components-color;
+//$--color-text-primary: $primary-color;
+//$--color-text-regular: $primary-color-lighter-i;
+//$--color-text-secondary: $secondary-text-color;
+//$--color-text-placeholder: $primary-color-lighter-iii;
+//
+//$--color-danger: $danger-color;
+//
+//$--border-radius-base: $components-border-radius;
+//
+//$--input-height: $input-height;
+
+);

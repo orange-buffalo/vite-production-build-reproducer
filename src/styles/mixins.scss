@@ -1,0 +1,60 @@
+@use "vars" as *;
+
+@mixin gradient-background {
+  background-color: $primary-color;
+  background: linear-gradient(190deg, $primary-color 0%, $primary-color-lighter-i 25%, $secondary-color 100%);
+}
+
+$breakpoints: (
+    xs: $xs-screen,
+    sm: $sm-screen,
+    md: $md-screen,
+    lg: $lg-screen,
+    xl: $xl-screen
+);
+
+@mixin respond-above-starting-with($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value + 1) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin input-width() {
+  width: 100%;
+  @include respond-above-starting-with(lg) {
+    max-width: 400px;
+  }
+}
+
+@mixin loading-placeholder() {
+  border-radius: 5px;
+  background: $primary-grey;
+  background: linear-gradient(238deg, $primary-grey 8%, $white 18%, $primary-grey 33%);
+  background-size: 200% 200%;
+  animation: loading-placeholder-animation 1.2s linear infinite;
+}
+
+@keyframes loading-placeholder-animation {
+  0% {
+    background-position: 100% 0
+  }
+  100% {
+    background-position: -100% 0
+  }
+}
